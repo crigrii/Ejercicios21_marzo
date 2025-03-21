@@ -1,11 +1,10 @@
-```mermaid 
-
+```mermaid
 classDiagram
     class Habitacion {
         - int numero
         - string tipo
         - bool ocupada
-        + Habitacion(int, string)
+        + Habitacion(int num, string t)
         + ~Habitacion()
         + int getNumero() const
         + string getTipo() const
@@ -17,7 +16,7 @@ classDiagram
     class Cliente {
         - int id
         - string nombre
-        + Cliente(int, string)
+        + Cliente(int i, string n)
         + ~Cliente()
         + int getId() const
         + string getNombre() const
@@ -27,14 +26,13 @@ classDiagram
         - string nombre
         - vector<Habitacion> habitaciones
         - vector<Cliente*> clientes
-        + Hotel(string)
+        + Hotel(string n)
         + ~Hotel()
-        + void agregarHabitacion(int, string)
-        + void registrarCliente(Cliente*)
+        + void agregarHabitacion(int numero, string tipo)
+        + void registrarCliente(Cliente* cliente)
         + void mostrarInfo() const
     }
 
-    Hotel  *-- Habitacion  
-    Hotel  o-- Cliente 
-
+    Hotel *-- Habitacion 
+    Hotel o-- Cliente
 ```
